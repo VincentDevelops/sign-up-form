@@ -1,0 +1,110 @@
+@import 'meyer-reset.css';
+@font-face {
+    font-family: 'Norse';
+    src: url(/assets/fonts/Norse-Bold.otf) format("opentype");
+}
+
+html, body {
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+}
+
+.flex {
+    display: flex;
+}
+
+.container {
+    min-height: 100vh;
+    min-width: 100vw;
+    background: 
+        linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,0.5)),
+        url(/assets/images/halie-west-25xggax4bSA-unsplash.jpg) center/cover repeat;
+    flex-direction: column;
+}
+
+.logo {
+    flex-direction: row;
+    height: fit-content;
+    padding: .75rem 0;
+    justify-content: center;
+}
+
+.logo-img {
+    max-height: 50px;
+    margin-right: .5rem;
+}
+
+.logo-text {
+    font-family: 'Norse', sans-serif;
+    font-size: 50px;
+    color: rgb(207, 215, 223);
+    height: fit-content;
+}
+
+.sign-up {
+    background-color: aliceblue;
+    padding: .25rem .5rem;
+    max-width: 100%;
+}
+
+.sign-up-form {
+    flex-direction: column;
+    padding-top: 1rem;
+}
+
+.sign-up-title {
+    align-self: center;
+    margin-bottom: 2rem;
+    font-size: 
+}
+
+.prompt {
+    margin-bottom: .5rem;
+}
+
+.input {
+    border-radius: .33rem;
+    border: 1px solid rgb(110, 108, 108);
+    height: 1.25rem;
+    margin-bottom: 1.5rem;
+}
+
+.input:active {
+    border: 1px solid blue;
+}
+
+.input +.sign-up-button {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.sign-up-button {
+    background-color: green;
+    width: fit-content;
+    padding: .5rem 1.25rem;
+    border-radius: .25rem;
+    align-self: center;
+}
+
+.log-in {
+    justify-self: center;
+    width: fit-content;
+    margin-bottom: 1rem;
+}
+
+.links {
+    padding: 1rem 0;
+    justify-content: center;
+    width: 100%;
+
+}
+
+.link {
+    text-decoration: none;
+    color: whitesmoke
+}
+
+
+
