@@ -9,6 +9,8 @@
 }
 /* @link https://utopia.fyi/type/calculator?c=360,18,1.2,1240,20,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
 
+*, *::before, *::after { box-sizing: border-box; }
+
 :root {
   --step--2: clamp(0.7813rem, 0.7736rem + 0.0341vw, 0.8rem);
   --step--1: clamp(0.9375rem, 0.9119rem + 0.1136vw, 1rem);
@@ -21,8 +23,6 @@
 }
 
 html, body {
-    height: 100vh;
-    width: 100vw;
     margin: 0;
     padding: 0;
 }
@@ -31,14 +31,14 @@ html, body {
     display: flex;
 }
 
-.background {
+.image {
     background: 
-        linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.75)),
-        url(/assets/images/halie-west-25xggax4bSA-unsplash.jpg) center/cover repeat;
+        linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.75));    
     position: absolute;
     inset: 0;
     z-index: -1;
-    height: 100%;
+    width: 100%;
+    
 }
 
 .container {
@@ -49,6 +49,7 @@ html, body {
 
 .container-main {
     flex-direction: column;
+    align-items: center;
 }
 
 .logo {
@@ -73,12 +74,13 @@ html, body {
 .sign-up {
     background-color: aliceblue;
     padding: .25rem .5rem;
-    max-width: 100%;
+    width: 100%;
 }
 
 .sign-up-form {
     flex-direction: column;
     padding: 1rem .25rem;
+    
 }
 
 .sign-up-title {
@@ -131,6 +133,7 @@ html, body {
 .footer {
     background-color: rgb(118, 151, 88);
     height: 100%;
+    width: 100%;
     flex-direction: column;
     flex-grow: 1;
 }
@@ -177,6 +180,10 @@ html, body {
         max-height: 200px;
     }
     
+    .sign-up {
+        width: 100%;
+    }
+
     .sign-up-button {
         font-size: var(--step-1);
     }
@@ -197,13 +204,9 @@ html, body {
     .container-main {
         flex-direction: row;
     }
-    .background {
+
+    .image {
         position: static;
-        height: auto;
-        border: 2px solid red;
     }
-
-
-
     
 }
