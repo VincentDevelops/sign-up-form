@@ -3,6 +3,22 @@
     font-family: 'Norse';
     src: url(/assets/fonts/Norse-Bold.otf) format("opentype");
 }
+@font-face {
+    font-family: 'Coolvetica Rg';
+    src: url(/assets/fonts/);
+}
+/* @link https://utopia.fyi/type/calculator?c=360,18,1.2,1240,20,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+
+:root {
+  --step--2: clamp(0.7813rem, 0.7736rem + 0.0341vw, 0.8rem);
+  --step--1: clamp(0.9375rem, 0.9119rem + 0.1136vw, 1rem);
+  --step-0: clamp(1.125rem, 1.0739rem + 0.2273vw, 1.25rem);
+  --step-1: clamp(1.35rem, 1.2631rem + 0.3864vw, 1.5625rem);
+  --step-2: clamp(1.62rem, 1.4837rem + 0.6057vw, 1.9531rem);
+  --step-3: clamp(1.944rem, 1.7405rem + 0.9044vw, 2.4414rem);
+  --step-4: clamp(2.3328rem, 2.0387rem + 1.3072vw, 3.0518rem);
+  --step-5: clamp(2.7994rem, 2.384rem + 1.8461vw, 3.8147rem);
+}
 
 html, body {
     height: 100vh;
@@ -15,12 +31,23 @@ html, body {
     display: flex;
 }
 
+.background {
+    background: 
+        linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.75)),
+        url(/assets/images/halie-west-25xggax4bSA-unsplash.jpg) center/cover repeat;
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    height: 100%;
+}
+
 .container {
     min-height: 100vh;
     min-width: 100vw;
-    background: 
-        linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,0.5)),
-        url(/assets/images/halie-west-25xggax4bSA-unsplash.jpg) center/cover repeat;
+    flex-direction: column;
+}
+
+.container-main {
     flex-direction: column;
 }
 
@@ -51,24 +78,28 @@ html, body {
 
 .sign-up-form {
     flex-direction: column;
-    padding-top: 1rem;
+    padding: 1rem .25rem;
 }
 
 .sign-up-title {
     align-self: center;
     margin-bottom: 2rem;
-    font-size: 
+    font-size: var(--step-1);
+    font-family: Arial, Helvetica, sans-serif; 
+    font-weight: 300;
 }
 
 .prompt {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: var(--step--1);
     margin-bottom: .5rem;
 }
 
 .input {
     border-radius: .33rem;
-    border: 1px solid rgb(110, 108, 108);
+    border: 1px solid rgb(164, 164, 164);
     height: 1.25rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
 }
 
 .input:active {
@@ -81,30 +112,98 @@ html, body {
 }
 
 .sign-up-button {
-    background-color: green;
+    background-color: rgba(89, 109, 72);
     width: fit-content;
     padding: .5rem 1.25rem;
     border-radius: .25rem;
     align-self: center;
+    color: whitesmoke;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .log-in {
     justify-self: center;
     width: fit-content;
     margin-bottom: 1rem;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.footer {
+    background-color: rgb(118, 151, 88);
+    height: 100%;
+    flex-direction: column;
+    flex-grow: 1;
 }
 
 .links {
     padding: 1rem 0;
-    justify-content: center;
+    align-items: center;
     width: 100%;
-
+    font-size: var(--step-0);
+    flex-direction: column;
 }
 
 .link {
     text-decoration: none;
-    color: whitesmoke
+    color: whitesmoke;
+    margin-bottom: 1rem;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
+#git-link {
+    width: 3.5rem;
+}
+
+@media (min-width: 481px) {
+
+    .container {
+        align-items: center;
+    }
+
+    .container-main {
+        width: 85%;
+    }
+
+    .prompt {
+        font-size: var(--step-1);
+    }
+
+    .input {
+        height: 2rem;
+    }
+
+    .footer {
+        width: 85%;
+        max-height: 200px;
+    }
+    
+    .sign-up-button {
+        font-size: var(--step-1);
+    }
+
+    .log-in {
+        font-size: var(--step-0);
+    }
+
+    .links {
+        font-size: var(--step-1);
+    }
+
+}
+
+@media (min-width: 769px) {
+ 
+
+    .container-main {
+        flex-direction: row;
+    }
+    .background {
+        position: static;
+        height: auto;
+        border: 2px solid red;
+    }
 
 
+
+    
+}
